@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'BeerApp/base.html' %}
+{% block title_block %}
+Beer List Page
+{% endblock %}
+{% block body_block %}
+<h1>Beer Information Dashboard</h1>
+<table border="3">
+  <thead>
+    <th>Beer Name</th>
+    <th>Details</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </thead>
+  {% for beer in beer_list %}
+    <tr>
+      <td>{{beer.name | title }}</td>
+      <td><a href="{% url 'detail' pk=beer.id %}">Details</a></td>
+      <td><a href="{% url 'update' pk=beer.id %}">Update</a></td>
+      <td><a href="{% url 'delete' pk=beer.id %}">Delete</a></td>
+    </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'create' %}" class="btn btn-primary btn-lg">Insert a new Beer.</a>
+{% endblock %}

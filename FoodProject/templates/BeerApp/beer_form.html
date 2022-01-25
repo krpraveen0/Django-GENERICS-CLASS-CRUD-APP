@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'BeerApp/base.html' %}
+{% block title_block %}
+Create Beer Page.
+{% endblock %}
+{% block body_block %}
+<div class="container">
+  <h1>Add new Beer here.</h1>
+</div>
+<div class="container">
+  <form  method="post">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" name="submit" value="Insert/Update" class="btn btn-primary btn-lg">
+  </form>
+</div>
+{% endblock %}

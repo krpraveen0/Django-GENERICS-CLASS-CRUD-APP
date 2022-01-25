@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'BeerApp/base.html' %}
+{% block title_block %}
+Beer Update Page
+{% endblock %}
+{% block body_block %}
+<form  method="post">
+  {%csrf_token%}
+  {{form.as_p}}
+  <input type="submit" name="submit" value="Update">
+</form>
+{% endblock %}

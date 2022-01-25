@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'BeerApp/base.html' %}
+{% block title_block %}
+Beer Details Page
+{% endblock %}
+{% block body_block %}
+  <h2>Beer Details..</h2>
+  <div class="container">
+    <ul>
+      <li>Beer Name: {{beer.name}}</li>
+      <li>Beer Taste: {{beer.taste}}</li>
+      <li>Beer Color: {{beer.color}}</li>
+      <li>Beer Price: {{beer.price}}</li>
+    </ul>
+  </div>
+{% endblock %}

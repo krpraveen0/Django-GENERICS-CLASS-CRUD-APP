@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'BeerApp/base.html' %}
+{% block title_block %}
+Delete Page.
+{% endblock %}
+{% block body_block %}
+<div class="container">
+  <form method="post">
+    {%csrf_token%}
+    <h1>Do you want to Delete {{beer.name}} from the list</h1>
+    <input type="submit" name="submit" class="btn btn-lg btn-danger" value="Delete">
+    <a href="{% url 'home' %}" class="btn btn-lg btn-success">Cancel</a>
+  </form>
+
+</div>
+{% endblock %}
